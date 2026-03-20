@@ -1,5 +1,5 @@
 import { Scene } from 'phaser';
-import gameOptions from "../helper/gameOptions.ts";
+import gameOptions from "../helper/gameOptions";
 
 export default class GameOverScene extends Scene
 {

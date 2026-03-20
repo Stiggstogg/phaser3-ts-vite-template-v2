@@ -1,4 +1,5 @@
-import { GameObjects } from 'phaser';
+import { GameObjects, Input, Scene } from 'phaser';
+import type { Direction } from '../types/spongeType';
 
 // Sprite class
 export default class Sponge extends GameObjects.Sprite {
@@ -6,7 +7,7 @@ export default class Sponge extends GameObjects.Sprite {
     private readonly speed: number;
 
     // Constructor
-    constructor(scene: Phaser.Scene, x: number, y: number) {
+    constructor(scene: Scene, x: number, y: number) {
 
         super(scene, x, y, 'sponge');
         this.setInteractive();
@@ -18,13 +19,13 @@ export default class Sponge extends GameObjects.Sprite {
     }
 
     // Action which should happen when the sprite is clicked
-    click(_pointer: Phaser.Input.Pointer): void {               // remove underscore if pointer is used
+    click(_pointer: Input.Pointer): void {               // remove underscore if pointer is used
         console.log('Spongebob Squarepants was clicked!');
         this.scene.scene.start('GameOver');
     }
 
     // Move the sprite
-    move(direction: string): void {
+    move(direction: Direction): void {
 
         switch(direction) {
             case 'up':                   // movement up

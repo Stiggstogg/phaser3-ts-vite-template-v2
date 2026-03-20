@@ -1,5 +1,5 @@
 // Phaser import
-import { Game, Types } from "phaser";
+import { Game, Types, AUTO, Scale } from "phaser";
 
 // import style file
 import './style.css'
@@ -16,14 +16,14 @@ import gameOptions from './helper/gameOptions';
 
 const config: Types.Core.GameConfig = {
     title: gameOptions.gameTitle,
-    type: Phaser.AUTO,
+    type: AUTO,
     width: gameOptions.gameWidth,
     height: gameOptions.gameHeight,
     parent: 'game-container',
     backgroundColor: '#000000',
     scale: {
-        mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.CENTER_BOTH
+        mode: Scale.FIT,
+        autoCenter: Scale.CENTER_BOTH
     },
     scene: [
         BootScene,

@@ -1,5 +1,5 @@
-import { Scene, GameObjects, Types } from 'phaser';
-import gameOptions from "../helper/gameOptions.ts";
+import { Scene, GameObjects, Types, Input } from 'phaser';
+import gameOptions from "../helper/gameOptions";
 
 export default class MenuScene extends Scene
 {
@@ -102,11 +102,11 @@ export default class MenuScene extends Scene
 
             item.setInteractive();          // set interactive
 
-            item.on(Phaser.Input.Events.POINTER_OVER, function(this: MenuScene) : void {        // set event action for mouse over (selecting it)
+            item.on(Input.Events.POINTER_OVER, function(this: MenuScene) : void {        // set event action for mouse over (selecting it)
                 this.selectSpecific(i);
             }, this);
 
-            item.on(Phaser.Input.Events.POINTER_DOWN, function(this: MenuScene) : void {        // set event action for pointer down (clicking it with the mouse)
+            item.on(Input.Events.POINTER_DOWN, function(this: MenuScene) : void {        // set event action for pointer down (clicking it with the mouse)
                 this.selectSpecific(i);          // select the entry (if not already)
                 this.spaceEnterKey();           // click it
             }, this);
